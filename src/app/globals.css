@@ -1,0 +1,1007 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: local("Google Sans"), url("../assets/fonts/GoogleSans-Bold.woff2");
+  font-weight: bold;
+  font-style: "normal";
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: local("Be Vietnam Pro"), url("../assets/fonts/BeVietnamPro-Black.ttf");
+  font-weight: bold;
+  font-style: "normal";
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: local("Google Sans"), url("../assets/fonts/GoogleSans-Medium.woff2");
+  font-weight: normal;
+  font-style: "normal";
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: local("Google Sans"), url("../assets/fonts/GoogleSans-Regular.woff2");
+  font-weight: 500;
+  font-style: "normal";
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: local("Google Sans"), url("../assets/fonts/GoogleSans-Regular.woff2");
+  font-weight: 500;
+  font-style: "normal";
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+.form-input,
+.form-textarea,
+.form-select,
+.form-multiselect {
+  @apply w-full rounded-md border border-white-light bg-white px-4 py-2 text-sm font-semibold text-black !outline-none focus:border-primary focus:ring-transparent dark:border-[#17263c] dark:bg-[#121e32] dark:text-white-dark dark:focus:border-primary;
+}
+
+.form-input-lg,
+.form-textarea-lg,
+.form-select-lg,
+.form-multiselect-lg {
+  @apply py-2.5 text-base;
+}
+.form-input-sm,
+.form-textarea-sm,
+.form-select-sm,
+.form-multiselect-sm {
+  @apply py-1.5 text-xs;
+}
+label {
+  @apply mb-1.5 block font-semibold;
+}
+
+.form-radio,
+.form-checkbox {
+  @apply h-5 w-5 cursor-pointer rounded border-2 border-white-light bg-transparent text-primary !shadow-none !outline-none !ring-0 !ring-offset-0 checked:bg-[length:90%_90%] disabled:cursor-not-allowed disabled:bg-[#eee] dark:border-[#253b5c] dark:checked:border-transparent dark:disabled:bg-[#1b2e4b] ltr:mr-1.5 rtl:ml-1.5;
+}
+
+.form-radio {
+  @apply rounded-full;
+}
+
+.modal > div {
+  background: #0000005e;
+  display: flex;
+  max-width: 100%;
+  height: 100%;
+}
+.modal > div > div {
+  max-width: 1800px;
+  width: 40%;
+  margin: auto;
+}
+@media only screen and (max-width: 1500px) {
+  .modal > div > div {
+    width: 60% !important;
+  }
+}
+.item-shadow {
+  box-shadow: 60px 40px 50px 0px rgba(36, 44, 120, 0.2);
+}
+
+/* checkbox & radio */
+.form-radio,
+.form-checkbox {
+  @apply h-5 w-5 cursor-pointer rounded border-2 border-white-light bg-transparent text-primary !shadow-none !outline-none !ring-0 !ring-offset-0 checked:bg-[length:90%_90%] disabled:cursor-not-allowed disabled:bg-[#eee] dark:border-[#253b5c] dark:checked:border-transparent dark:disabled:bg-[#1b2e4b] ltr:mr-1.5 rtl:ml-1.5;
+}
+
+.form-radio {
+  @apply rounded-full;
+}
+
+:is(
+    .mantine-Radio-radio[type="radio"],
+    .mantine-Checkbox-input[type="checkbox"]
+  )
+  ~ svg {
+  transition: none !important;
+}
+
+/* dropdown */
+/* dropdown */
+.dropdown {
+  @apply relative;
+}
+.dropdown > button {
+  @apply flex;
+}
+.dropdown_menu {
+  @apply min-w-[120px] rounded bg-white text-black dark:bg-[#1b2e4b] dark:text-white-dark;
+}
+.dropdown li > a,
+.dropdown li > button {
+  @apply flex items-center px-4 py-2 hover:bg-primary/10 hover:text-primary;
+}
+.dropdown li > button {
+  @apply w-full;
+}
+
+/* theme */
+
+:root {
+  /* Your default theme */
+  --background: white;
+  --foreground: black;
+}
+
+[data-theme="dark"] {
+  --background: black;
+  --foreground: white;
+}
+
+/* Cursor */
+/* Animation */
+.typewriter-animation {
+  animation: typewriter 2s steps(100) 1 normal both,
+    blinkingCursor 200ms steps(100) infinite normal;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blinkingCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+/* ck-editor */
+.ck-editor {
+  width: 100% !important;
+  border-radius: 50px !important;
+}
+
+.ck-content {
+  /* animation: typewriter 2s steps(100) 1 normal both,
+    blinkingCursor 200ms steps(100) infinite normal; */
+  min-height: 400px;
+  background-color: #f5f9fc !important;
+  box-shadow: inset gray 0px 0px 25px -12px !important;
+  padding: 15px;
+}
+
+/* {
+  animation: typewriter 20s steps(100) 1 normal both,
+    blinkingCursor 2000ms steps(100) infinite normal;
+} */
+
+/* loading css */
+* {
+  -webkit-tap-highretro-color: transparent;
+}
+
+*:focus {
+  outline: none;
+}
+
+.loading {
+  /* height: 24px;
+	width: 24px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: progress;
+
+  border-radius: 50%;
+  border-top: 2px solid white;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid white;
+  border-right: 2px solid transparent;
+
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* HTML: <div class="loader"></div> */
+.chat-loader {
+  width: 15px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: l5 1s infinite linear alternate;
+}
+@keyframes l5 {
+  0% {
+    box-shadow: 20px 0 #000, -20px 0 #0002;
+    background: #000;
+  }
+  33% {
+    box-shadow: 20px 0 #000, -20px 0 #0002;
+    background: #0002;
+  }
+  66% {
+    box-shadow: 20px 0 #0002, -20px 0 #000;
+    background: #0002;
+  }
+  100% {
+    box-shadow: 20px 0 #0002, -20px 0 #000;
+    background: #000;
+  }
+}
+
+/* HTML: <div class="dots-loader"></div> */
+.dots-loader {
+  width: 30px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: l5 1s infinite linear alternate;
+}
+@keyframes l5 {
+  0% {
+    box-shadow: 20px 0 #000, -20px 0 #0002;
+    background: #000;
+  }
+  33% {
+    box-shadow: 20px 0 #000, -20px 0 #0002;
+    background: #0002;
+  }
+  66% {
+    box-shadow: 20px 0 #0002, -20px 0 #000;
+    background: #0002;
+  }
+  100% {
+    box-shadow: 20px 0 #0002, -20px 0 #000;
+    background: #000;
+  }
+}
+/* HTML: <div class="loader"></div> */
+.loader {
+  --w: 10ch;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  line-height: 1.2em;
+  letter-spacing: var(--w);
+  width: var(--w);
+  overflow: hidden;
+  white-space: nowrap;
+  color: #0000;
+  animation: l19 2s infinite linear;
+}
+.loader:before {
+  content: "Loading...";
+}
+
+@keyframes l19 {
+  0% {
+    text-shadow: calc(0 * var(--w)) 0, calc(-1 * var(--w)) 0,
+      calc(-2 * var(--w)) 0, calc(-3 * var(--w)) 0, calc(-4 * var(--w)) 0,
+      calc(-5 * var(--w)) 0, calc(-6 * var(--w)) 0, calc(-7 * var(--w)) 0,
+      calc(-8 * var(--w)) 0, calc(-9 * var(--w)) 0;
+  }
+  4% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0,
+      calc(-2 * var(--w)) 0, calc(-3 * var(--w)) 0, calc(-4 * var(--w)) 0,
+      calc(-5 * var(--w)) 0, calc(-6 * var(--w)) 0, calc(-7 * var(--w)) 0,
+      calc(-8 * var(--w)) 0, calc(-9 * var(--w)) 0;
+  }
+  8% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0, calc(-3 * var(--w)) 0, calc(-4 * var(--w)) 0,
+      calc(-5 * var(--w)) 0, calc(-6 * var(--w)) 0, calc(-7 * var(--w)) 0,
+      calc(-8 * var(--w)) 0, calc(-9 * var(--w)) 0;
+  }
+  12% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0, calc(-4 * var(--w)) 0,
+      calc(-5 * var(--w)) 0, calc(-6 * var(--w)) 0, calc(-7 * var(--w)) 0,
+      calc(-8 * var(--w)) 0, calc(-9 * var(--w)) 0;
+  }
+  16% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0, calc(-5 * var(--w)) 0, calc(-6 * var(--w)) 0,
+      calc(-7 * var(--w)) 0, calc(-8 * var(--w)) 0, calc(-9 * var(--w)) 0;
+  }
+  20% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0, calc(-6 * var(--w)) 0,
+      calc(-7 * var(--w)) 0, calc(-8 * var(--w)) 0, calc(-9 * var(--w)) 0;
+  }
+  24% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0, calc(-7 * var(--w)) 0, calc(-8 * var(--w)) 0,
+      calc(-9 * var(--w)) 0;
+  }
+  28% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0, calc(-8 * var(--w)) 0,
+      calc(-9 * var(--w)) 0;
+  }
+  32% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) 0, calc(-9 * var(--w)) 0;
+  }
+  36% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0;
+  }
+  40%,
+  60% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0 #000;
+  }
+  64% {
+    text-shadow: calc(0 * var(--w)) 0, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0 #000;
+  }
+  68% {
+    text-shadow: calc(0 * var(--w)) 0, calc(-1 * var(--w)) 0,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0 #000;
+  }
+  72% {
+    text-shadow: calc(0 * var(--w)) 0, calc(-1 * var(--w)) 0,
+      calc(-2 * var(--w)) 0, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0 #000;
+  }
+  76% {
+    text-shadow: calc(0 * var(--w)) 0, calc(-1 * var(--w)) 0,
+      calc(-2 * var(--w)) 0, calc(-3 * var(--w)) 0, calc(-4 * var(--w)) 0 #000,
+      calc(-5 * var(--w)) 0 #000, calc(-6 * var(--w)) 0 #000,
+      calc(-7 * var(--w)) 0 #000, calc(-8 * var(--w)) 0 #000,
+      calc(-9 * var(--w)) 0 #000;
+  }
+  80% {
+    text-shadow: calc(0 * var(--w)) 0, calc(-1 * var(--w)) 0,
+      calc(-2 * var(--w)) 0, calc(-3 * var(--w)) 0, calc(-4 * var(--w)) 0,
+      calc(-5 * var(--w)) 0 #000, calc(-6 * var(--w)) 0 #000,
+      calc(-7 * var(--w)) 0 #000, calc(-8 * var(--w)) 0 #000,
+      calc(-9 * var(--w)) 0 #000;
+  }
+  84% {
+    text-shadow: calc(0 * var(--w)) 0, calc(-1 * var(--w)) 0,
+      calc(-2 * var(--w)) 0, calc(-3 * var(--w)) 0, calc(-4 * var(--w)) 0,
+      calc(-5 * var(--w)) 0, calc(-6 * var(--w)) 0 #000,
+      calc(-7 * var(--w)) 0 #000, calc(-8 * var(--w)) 0 #000,
+      calc(-9 * var(--w)) 0 #000;
+  }
+  88% {
+    text-shadow: calc(0 * var(--w)) 0, calc(-1 * var(--w)) 0,
+      calc(-2 * var(--w)) 0, calc(-3 * var(--w)) 0, calc(-4 * var(--w)) 0,
+      calc(-5 * var(--w)) 0, calc(-6 * var(--w)) 0, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0 #000;
+  }
+  92% {
+    text-shadow: calc(0 * var(--w)) 0, calc(-1 * var(--w)) 0,
+      calc(-2 * var(--w)) 0, calc(-3 * var(--w)) 0, calc(-4 * var(--w)) 0,
+      calc(-5 * var(--w)) 0, calc(-6 * var(--w)) 0, calc(-7 * var(--w)) 0,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0 #000;
+  }
+  96% {
+    text-shadow: calc(0 * var(--w)) 0, calc(-1 * var(--w)) 0,
+      calc(-2 * var(--w)) 0, calc(-3 * var(--w)) 0, calc(-4 * var(--w)) 0,
+      calc(-5 * var(--w)) 0, calc(-6 * var(--w)) 0, calc(-7 * var(--w)) 0,
+      calc(-8 * var(--w)) 0, calc(-9 * var(--w)) 0 #000;
+  }
+  100% {
+    text-shadow: calc(0 * var(--w)) 0, calc(-1 * var(--w)) 0,
+      calc(-2 * var(--w)) 0, calc(-3 * var(--w)) 0, calc(-4 * var(--w)) 0,
+      calc(-5 * var(--w)) 0, calc(-6 * var(--w)) 0, calc(-7 * var(--w)) 0,
+      calc(-8 * var(--w)) 0, calc(-9 * var(--w)) 0;
+  }
+}
+
+.ck-powered-by {
+  @apply hidden;
+}
+
+/* rippon */
+.rp-wrapper {
+  margin: 50px auto;
+  width: 80%;
+  height: 370px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 90;
+}
+
+.ribbon-wrapper-green {
+  width: 150px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+}
+
+.ribbon-wrapper-purple {
+  width: 180px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+}
+
+.ribbon-green {
+  font-weight: bold;
+  font-family: Sans-Serif;
+  color: #ffffff;
+  font-size: 15px;
+  text-align: center;
+  text-shadow: white 0px 1px 0px;
+  transform: rotate(30deg);
+  position: relative;
+  padding: 7px 0;
+  left: 0px;
+  top: 13px;
+  width: 220px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#bfdc7a),
+    to(#8ebf45)
+  );
+  box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+}
+
+.ribbon-blue {
+  font-weight: bold;
+  font-family: Sans-Serif;
+  color: #333;
+  font-size: 15px;
+  text-align: center;
+  text-shadow: white 0px 1px 0px;
+  transform: rotate(30deg);
+  position: relative;
+  padding: 7px 0;
+  left: 0px;
+  top: 13px;
+  width: 220px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#6cc3ed),
+    to(#019de4)
+  );
+  color: white;
+  /* box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3); */
+}
+
+.ribbon-purple {
+  font-weight: 600;
+  font-family: Sans-Serif;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  text-shadow: white 0px 1px 0px;
+  transform: rotate(30deg);
+  position: relative;
+  padding: 7px 0;
+  left: -5px;
+  top: 13px;
+  width: 260px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#fea5ff),
+    to(#ff00f4)
+  );
+  color: #fff;
+  /* box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3); */
+}
+
+.ribbon-green:before,
+.ribbon-green:after {
+  content: "";
+  /* Colour of the triangle. To flip the effect, use border-bottom. */
+  border-top: 3px solid #6e8900;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  position: absolute;
+  bottom: -3px; /* +1 to compensate for the border */
+}
+
+.ribbon-green:before {
+  left: 0px;
+}
+.ribbon-green:after {
+  right: 0px;
+}
+
+/* be vietnamese font */
+.be-vietnam-pro {
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+.be-vietnam-pro-thin {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.be-vietnam-pro-extralight {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.be-vietnam-pro-light {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.be-vietnam-pro-regular {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.be-vietnam-pro-medium {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.be-vietnam-pro-semibold {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.be-vietnam-pro-bold {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.be-vietnam-pro-extrabold {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.be-vietnam-pro-black {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.be-vietnam-pro-thin-italic {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.be-vietnam-pro-extralight-italic {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.be-vietnam-pro-light-italic {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.be-vietnam-pro-regular-italic {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.be-vietnam-pro-medium-italic {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.be-vietnam-pro-semibold-italic {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.be-vietnam-pro-bold-italic {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.be-vietnam-pro-extrabold-italic {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.be-vietnam-pro-black-italic {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+/* glow word */
+
+.glow-word-blue {
+  font-size: 60px;
+  -webkit-animation: glow-blue 1s ease-in-out infinite alternate;
+  -moz-animation: glow-blue 1s ease-in-out infinite alternate;
+  animation: glow-blue 1s ease-in-out infinite alternate;
+}
+
+.glow-word-purple {
+  font-size: 60px;
+  -webkit-animation: glow-purple 1s ease-in-out infinite alternate;
+  -moz-animation: glow-purple 1s ease-in-out infinite alternate;
+  animation: glow-purple 1s ease-in-out infinite alternate;
+}
+
+.glow-bg-blue {
+  color: white;
+  -webkit-animation: glow-bg-blue 2s ease-in-out infinite alternate;
+  -moz-animation: glow-bg-blue 2s ease-in-out infinite alternate;
+  animation: glow-bg-blue 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow-bg-blue {
+  0% {
+    background-color: #027aca;
+
+    /* color: white; */
+  }
+  50% {
+    background-color: #002f98;
+    /* color: blue; */
+  }
+  100% {
+    background-color: #027aca;
+    /* color: blue; */
+  }
+}
+
+.translate-y-hand {
+  -webkit-animation: translate-y-hand 1s ease-in-out infinite alternate;
+  -moz-animation: translate-y-hand 1s ease-in-out infinite alternate;
+  animation: translate-y-hand 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes translate-y-hand {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+@-webkit-keyframes glow-blue {
+  from {
+    /* text-shadow: 0 0 10px #fff, 0 0 13px #fff, 0 0 16px #019de4,
+      0 0 19px #019de4, 0 0 22px #019de4, 0 0 25px #019de4, 0 0 28px #019de4; */
+    color: #019de4;
+  }
+  to {
+    /* text-shadow: 0 0 20px #ceebf9, 0 0 23px #6cc3ed, 0 0 26px #6cc3ed,
+      0 0 29px #6cc3ed, 0 0 32px #6cc3ed, 0 0 35px #6cc3ed, 0 0 px #6cc3ed; */
+    color: #6cc3ed;
+  }
+}
+
+@-webkit-keyframes glow-purple {
+  from {
+    /* text-shadow: 0 0 10px #fff, 0 0 13px #fff, 0 0 16px #FF00F4,
+      0 0 19px #FF00F4, 0 0 22px #FF00F4, 0 0 25px #FF00F4, 0 0 28px #FF00F4; */
+    color: #ff00f4;
+  }
+  to {
+    /* text-shadow: 0 0 20px #FFD2F6, 0 0 23px #019de4, 0 0 26px #019de4,
+      0 0 29px #019de4, 0 0 32px #019de4, 0 0 35px #019de4, 0 0 px #019de4; */
+    color: #fea5ff;
+  }
+}
+
+.gradient-pink-button {
+  background-color: #ff00f4;
+  color: #fff;
+  fill: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  align-items: center;
+  appearance: none;
+  border: none;
+  border-color: transparent;
+  border-radius: #ff00f4;
+  box-shadow: none;
+  color: inherit;
+  font-size: 40px !important;
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  letter-spacing: 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0.1em 0.2em;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    background-color: #ff00f4;
+    color: #fff;
+    fill: #fff;
+    box-shadow: 0 0 10px rgba(255, 204, 126, 0.3);
+  }
+}
+
+.gradient-blue-button {
+  background-color: #6cc3ed;
+  color: #fff;
+  fill: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  align-items: center;
+  appearance: none;
+  border: none;
+  border-color: transparent;
+  border-radius: #6cc3ed;
+  box-shadow: none;
+  color: inherit;
+  font-size: 40px;
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  letter-spacing: 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0.1em 0.2em;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    background-color: #6cc3ed;
+    color: #fff;
+    fill: #6cc3ed;
+    box-shadow: 0 0 10px rgba(255, 204, 126, 0.3);
+  }
+}
+
+/* .gradient-button:visited {
+  background-color: #019de4;
+  color: #fff;
+  fill: #fff;
+} */
+
+.gradient-pink-button::after {
+  background: radial-gradient(
+    123.32% 162.82% at 89.23% 142.31%,
+    rgba(255, 204, 126, 0) 35.8%,
+    rgba(255, 204, 126, 0) 57.12%,
+    rgba(255, 228, 157, 0.4) 64.76%,
+    rgba(255, 53, 89, 0.4) 100%
+  );
+  content: "";
+  display: block;
+  height: 100%;
+  opacity: 1;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: all 0.1s ease-in-out;
+  width: 100%;
+}
+
+.gradient-blue-button::after {
+  background: radial-gradient(
+    123.32% 162.82% at 89.23% 142.31%,
+    rgba(255, 204, 126, 0) 35.8%,
+    rgba(255, 204, 126, 0) 57.12%,
+    rgba(128, 207, 238, 0.4) 64.76%,
+    rgba(28, 104, 219, 0.4) 100%
+  );
+  content: "";
+  display: block;
+  height: 100%;
+  opacity: 1;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: all 0.1s ease-in-out;
+  width: 100%;
+}
+
+/* Skeleton */
+
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.skeleton-image {
+  animation: skeleton-loading-image 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading-image {
+  0% {
+    color: hsl(200, 20%, 80%);
+  }
+  100% {
+    color: hsl(200, 20%, 95%);
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+.skeleton-text {
+  width: 100%;
+  height: 0.7rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.skeleton-text__body {
+  width: 75%;
+}
+
+.skeleton-footer {
+  width: 30%;
+}
+
+/* limit 3 lines */
+
+.limit-three-lines {
+  display: -webkit-box; /* Create a flexible box */
+  -webkit-box-orient: vertical; /* Specify the box orientation as vertical */
+  overflow: hidden; /* Hide overflow content */
+  text-overflow: ellipsis; /* Add ellipsis for overflow */
+  -webkit-line-clamp: 4; /* Limit to 3 lines */
+}
+
+/* click button */
+/* .button {
+  position: relative;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  background-color: #7d2ae8;
+  transition: all 0.2s ease;
+} */
+.button:active {
+  transform: scale(0.96);
+}
+/* .button:before,
+.button:after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1000;
+  background-repeat: no-repeat;
+}
+.button.animate::before {
+  top: -70%;
+  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+  animation: greentopBubbles ease-in-out 0.6s forwards infinite;
+}
+@keyframes greentopBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+.button.animate::after {
+  bottom: -70%;
+  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  animation: greenbottomBubbles ease-in-out 0.6s forwards infinite;
+}
+@keyframes greenbottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+} */
