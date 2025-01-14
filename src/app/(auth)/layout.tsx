@@ -1,5 +1,5 @@
 import BackGroundImage from "@/assets/images/background-image.jpg";
-import LogoImage from "@/assets/images/logo.png";
+import LogoImage from "@/assets/images/horizontal-logo.jpg";
 import Image from "next/image";
 export default function layout({
   children,
