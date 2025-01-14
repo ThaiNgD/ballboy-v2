@@ -12,7 +12,11 @@ const validateSchemaLogin = yup.object().shape({
 });
 
 function Login() {
-  const formik = useFormik<any>({
+  const formik = useFormik<{
+    remember_password: boolean;
+    username: string;
+    password: string;
+  }>({
     initialValues: {
       remember_password: false,
       username: "",
