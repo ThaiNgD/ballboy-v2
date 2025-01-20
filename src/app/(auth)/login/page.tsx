@@ -2,36 +2,34 @@
 "use client";
 import CheckBoxField from "@/components/CustomField/CheckboxField";
 import InputField from "@/components/CustomField/InputField";
+import { useAuthLogin } from "@/service/auth/useLogin";
 import { Button } from "flowbite-react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 
 const validateSchemaLogin = yup.object().shape({
-  username: yup.string().required("Vui lòng nhập tên đăng nhập"),
+  email: yup.string().required("Vui lòng nhập tên đăng nhập"),
   password: yup.string().required("Vui lòng nhập mật khẩu"),
 });
 
 function Login() {
-  const formik = useFormik<{
-    remember_password: boolean;
-    username: string;
-    password: string;
-  }>({
+  const { mutate: login } = useAuthLogin();
+  const formik = useFormik<IFormLogin>({
     initialValues: {
-      remember_password: false,
-      username: "",
+      is_remember: false,
+      email: "",
       password: "",
     },
     validationSchema: validateSchemaLogin,
-    onSubmit: (value) => {
-      console.log(value);
+    onSubmit: async (value) => {
+      await login(value);
     },
   });
   return (
     <form className="space-y-3 py-[20px] w-full" onSubmit={formik.handleSubmit}>
       <InputField
         formik={formik}
-        name="username"
+        name="email"
         label="Tên đăng nhập"
         clsLabelWrapper="mb-1 font-bold"
         className="!bg-[#F5F9FC]"
@@ -54,7 +52,7 @@ function Login() {
 
       <div className="flex items-center justify-between">
         <CheckBoxField
-          name="remember_password"
+          name="is_remember"
           label={"Ghi nhớ mật khẩu"}
           formik={formik}
         />

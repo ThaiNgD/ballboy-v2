@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit -p tsconfig.json --composite false"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.64.2",
     "axios": "^1.7.9",
     "clsx": "^2.1.1",
     "flowbite-react": "^0.10.2",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@tanstack/eslint-plugin-query": "^5.64.2",
     "@types/js-cookie": "^3.0.6",
     "@types/lodash": "^4.17.14",
     "@types/node": "^20",

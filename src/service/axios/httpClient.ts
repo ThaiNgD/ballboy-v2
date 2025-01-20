@@ -7,13 +7,13 @@ export const API_AI_TOKEN =
   process.env.NEXT_PUBLIC_API_AI_TOKEN || "MKTapiaitoken";
 export const REFRESH_TOKEN =
   process.env.NEXT_PUBLIC_REFRESH_TOKEN || "MKTrefresh"; // Update Start: Thêm key refresh token
-export const BASE_URL = process.env.NEXT_PUBLIC_URL || "http://localhost:5000/";
+export const BASE_URL = process.env.NEXT_PUBLIC_URL || "http://localhost:3001/";
 //https://content-ai-c4rx.onrender.com/ / http://localhost:5000/
 const axiosClient = Axios.create({
-  baseURL: joinPathParent(BASE_URL, "/api/v1").slice(1),
+  baseURL: joinPathParent(BASE_URL, "").slice(1),
   headers: {
     Accept: "application/json",
-    "Content-Type": "multipart/form-data",
+    "Content-Type": "application/json",
   },
 });
 
