@@ -11,7 +11,7 @@ import Image from "next/image";
 import { IoNotifications, IoSettings } from "react-icons/io5";
 const Header = () => {
   return (
-    <div className="h-[60px] px-4 gap-3 flex justify-end bg-black items-center">
+    <div className="h-[60px] px-4 gap-3 flex justify-end bg-[#399918] items-center">
       <div className="p-1 bg-white rounded-full shadow-inner">
         <IoNotifications size={20} />
       </div>

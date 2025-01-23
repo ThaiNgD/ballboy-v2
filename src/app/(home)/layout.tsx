@@ -11,7 +11,11 @@ export default function layout({
       <SideBar />
       <div className="flex flex-col flex-auto">
         <Header />
-        <>{children}</>
+        <div className="bg-[#399918] flex-auto">
+          <div className=" rounded-t-lg rounded-tr-none shadow-inner w-full h-full bg-white">
+            {children}
+          </div>
+        </div>
       </div>
     </div>
   );
